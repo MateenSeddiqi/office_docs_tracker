@@ -30,4 +30,19 @@ class IncomingDoc(models.Model):
 
     
 
+class OutgoingDoc(models.Model):
+    book_no = models.IntegerField()
+    page_no = models.IntegerField()
+    year    = models.CharField(max_length=20)
+    continuos_number = models.IntegerField(unique=True)
+    continuos_number = models.IntegerField(unique=True)
+    archive_no = models.IntegerField()
+    branch_no  = models.IntegerField()
+    short_explain = models.TextField()
+
+    def __str__(self):
+        return f"Continuous number: {self.continuos_number}"
+
+
+    
 
