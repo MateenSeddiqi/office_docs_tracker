@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "dev": "tailwindcss -i static/tailwindcss/tailwind-input.css -o static/css_out/out.css --watch"
+  },
   "dependencies": {
     "pillow": "^0.0.9"
   },
