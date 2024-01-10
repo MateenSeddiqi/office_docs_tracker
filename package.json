@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "pillow": "^0.0.9"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
   }
 }
