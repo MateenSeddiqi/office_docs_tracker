@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="bg-blue-800">
+    <h4>All in coming records</h4>
+    {% for incomingDoc in incomingDocs %}
+        <h4>{{incomingDoc.continuos_number}}</h4>
+        <h4>{{incomingDoc.book_no}}</h4>
+        <h4>{{incomingDoc.year}}</h4>
+        <h4>{{incomingDoc.archive}}</h4>
+        <h4>{{incomingDoc.branch}}</h4>
+        <h4>{{incomingDoc.date}}</h4>
+        <h4>{{incomingDoc.sender}}</h4>
+        <h4>{{incomingDoc.receiver}}</h4>
+    {% endfor %}
+</div>
+
+{% endblock %}

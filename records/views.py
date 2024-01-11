@@ -3,5 +3,8 @@ from .models import IncomingDoc, OutgoingDoc
 # Create your views here.
 
 
-def records(request):
-    return render (request, 'records/records.html')
+def incomingDoc(request):
+    incomingDocs = IncomingDoc.objects.all()
+    return render (request, 'records/incomingDocs.html', {
+        'incomingDocs': incomingDocs,
+        })
