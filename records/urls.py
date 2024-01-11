@@ -5,4 +5,5 @@ app_name='records'
 
 urlpatterns=[
     path('', views.incomingDoc, name='incomingDoc'), 
+    path('', views.outgoingDoc, name='outgoingDoc'),
 ]
