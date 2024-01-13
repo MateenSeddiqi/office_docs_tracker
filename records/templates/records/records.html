@@ -2,6 +2,15 @@
 {% load static %}
 
 {% block content %}
-
-<h3>All Records</h3>
+<div class="flex flex-col items-center justify-start h-screen pt-20">
+    <h1 class="text-3xl font-bold mb-4">All Records</h1>
+    <div class="flex space-x-4">
+        <a href="{% url 'records:incomingDoc' %}"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Incoming Files 
+        </a>
+        <a href="{% url 'records:outgoingDoc' %}"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Outgoing files 
+        </a>
+    </div>
+</div>
 {% endblock %}
