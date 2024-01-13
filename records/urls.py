@@ -4,6 +4,6 @@ from . import views
 app_name='records'
 
 urlpatterns=[
-    path('', views.incomingDoc, name='incomingDoc'), 
-    path('', views.outgoingDoc, name='outgoingDoc'),
+    path('incomingDoc/', views.incomingDoc, name='incomingDoc'), 
+    path('outgoingDoc/', views.outgoingDoc, name='outgoingDoc'),
 ]

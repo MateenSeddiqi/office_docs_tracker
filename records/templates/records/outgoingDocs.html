@@ -2,92 +2,41 @@
 {% load static %}
 
 {% block content %}
-
-<div class="bg-blue-800">
-    <h4>All in coming records</h4>
-    {% for outgoingDoc in incomingDocs %}
-        <h4>{{outgoingDoc.continuos_number}}</h4>
-        <h4>{{outgoingDoc.book_no}}</h4>
-        <h4>{{outgoingDoc.year}}</h4>
-        <h4>{{outgoingDoc.archive}}</h4>
-        <h4>{{outgoingDoc.branch}}</h4>
-        <h4>{{outgoingDoc.date}}</h4>
-        <h4>{{outgoingDoc.sender}}</h4>
-        <h4>{{outgoingDoc.receiver}}</h4>
-    {% endfor %}
-</div>
-
-
-<!-- <table class="table">
-    <thead class="bg-blue-500 text-white">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td class="bg-red-500 text-white">Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-    </tbody>
-</table -->
-
-<table class="table-auto w-full">
-    <thead class="w-full py-4 text-center bg-teal-500 shadow text-white ">
-        <th class="py-4 " id="border-design">#</th>
-        <th class="py-4 " id="border-design">Product Name</th>
-        <th class="py-4 " id="border-design">Product Description</th>
-        <th class="py-4 " id="border-design">Product Category</th>
-        <th class="py-4 " id="border-design">Product Packet</th>
-        <th class="py-4 " id="border-design">Product Rate</th>
-        <th class="py-4 " id="border-design">Product Price</th>
-        <th class="py-4" id="border-design">Product profit</th>
-        <th class="py-4 " id="border-design">Product stock</th>
-        <th class="py-4" id="border-design">Manufacturing Date</th>
-        <th class="py-4" id="border-design">Expiration Date</th>
-    </thead>
-    <tbody class="text-center shadow border">
-        
-        <!-- {% for item in page_obj.object_list %} -->
-        <tr class="border">
-            <!-- {% if item.image %}
-                <td class="py-3"><img src="{{item.image.url}}" alt="image" class="w-16 h-16 rounded-full shadow"></td>
-            {% elif not item.image %}
-                <td class="py-3"><img src="media/item_images/default.png" class="w-16 h-16 rounded-full shadow"></td>
-            {% endif %} -->
-            
-            <td class="py-3">dfg</td>
-            <td class="py-3">dfg</td>
-            <td class="py-3 text-start w-40">dfg</td>
-            <td class="py-3">dfg</td>
-            <td class="py-3">dfg</td>
-            <td class="py-3">dfg</td>
-            <td class="py-3">dfg</td>
-            <td class="py-3">dfg</td>
-            <td class="py-3">dfg</td>
-            <td class="py-3">dfg</td>
-            <td class="py-3">ddf</td>
-        </tr>
-        <!-- {% endfor %} -->
-    </tbody>
-</table>
-
-
+{% for outgoingDoc in outgoingDocs %}
+    <div class="min-h-screen bg-gray-100 flex items-start justify-center p-8">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden w-full">
+            <table class="min-w-full">
+                <thead>
+                    <tr>
+                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Co.No</th>
+                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Book No</th>
+                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Year</th>
+                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Archive</th>
+                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Branch</th>
+                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Sender</th>
+                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Receiver</th>
+                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Surrender_name</th>
+                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">More Details</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.continuos_number}}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.date}}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.book_no}}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.page_no}}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.year}}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.archive}}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.branch}}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.dossier_no}}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.short_explain}}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap border">More Info</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endfor %}
 {% endblock %}
