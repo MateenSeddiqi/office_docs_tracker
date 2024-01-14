@@ -17,8 +17,8 @@ class IncomingDoc(models.Model):
     Surrender_name =models.CharField(max_length=200) 
     Surrender_date = models.DateField()
     register_number = models.IntegerField()
-    remarks = models.TextField()
     image = models.ImageField(upload_to="records/incomingdocs/images", null=True, blank=True)
+    remarks = models.TextField()
 
     def __str__(self):
         return f"Continuous number: {self.continuos_number}"
