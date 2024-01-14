@@ -3,7 +3,7 @@
 
 {% block content %}
 <a href="{% url 'records:addIncomingDoc' %}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold items-center">Add New </button></a>
-{% for incomingDoc in incomingDocs %}
+
     <div class="min-h-screen bg-gray-100 flex items-start justify-center p-8">
         <div class="bg-white shadow-md rounded-lg overflow-hidden w-full">
             <table class="min-w-full">
@@ -22,6 +22,7 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
+                    {% for incomingDoc in incomingDocs %}
                     <tr>
                         <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.continuos_number}}</td>
                         <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.book_no}}</td>
@@ -34,10 +35,11 @@
                         <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.Surrender_name}}</td>
                         <td class="px-6 py-4 whitespace-no-wrap border">More Info</td>
                     </tr>
+                    {% endfor %}
                     <!-- Add more rows as needed -->
                 </tbody>
             </table>
         </div>
     </div>
-{% endfor %}
+
 {% endblock %}
