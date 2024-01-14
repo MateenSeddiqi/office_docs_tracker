@@ -16,6 +16,7 @@ def incomingDoc(request):
 
 
 def addIncomingDoc(request):
+    # if request.method == 'POST':
     incomingDocForm = IncomingDocForm()
     return render (request, 'records/incomingDocForm.html', {
         'incomingDocForm': incomingDocForm

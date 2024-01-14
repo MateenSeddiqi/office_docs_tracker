@@ -78,7 +78,8 @@ class IncomingDocForm(forms.ModelForm):
 
             'remarks': forms.Textarea(attrs={
                 'class': 'w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 ',
-                'placeholder': 'Enter number '
+                'placeholder': 'Enter number ',
+                'rows':2,
                 }),
 
             

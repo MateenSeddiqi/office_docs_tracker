@@ -743,6 +743,31 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -900,6 +925,22 @@ video {
 
 .max-w-screen-xl {
   max-width: 1280px;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-6xl {
+  max-width: 72rem;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.max-w-7 {
+  max-width: 1.75rem;
 }
 
 .flex-shrink {
@@ -2026,6 +2067,14 @@ video {
   padding: 2rem;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -2667,6 +2716,14 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
+  }
+
   .sm\:underline {
     text-decoration-line: underline;
   }
@@ -2687,6 +2744,12 @@ video {
 
   .md\:flex-row {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
