@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import IncomingDoc, OutgoingDoc
+from .forms import IncomingDocForm
 # Create your views here.
 
 def records(request):
@@ -12,6 +13,15 @@ def incomingDoc(request):
     return render (request, 'records/incomingDocs.html', {
         'incomingDocs': incomingDocs,
         })
+
+
+def addIncomingDoc(request):
+    incomingDocForm = IncomingDocForm()
+    return render (request, 'records/incomingDocForm.html', {
+        'incomingDocForm': incomingDocForm
+    }) 
+
+
 
 # code of outgoing docs to display outgoing files
 def outgoingDoc(request):

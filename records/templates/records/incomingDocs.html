@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+<a href="{% url 'records:addIncomingDoc' %}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold items-center">Add New </button></a>
 {% for incomingDoc in incomingDocs %}
     <div class="min-h-screen bg-gray-100 flex items-start justify-center p-8">
         <div class="bg-white shadow-md rounded-lg overflow-hidden w-full">

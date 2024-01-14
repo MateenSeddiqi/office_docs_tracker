@@ -7,4 +7,5 @@ urlpatterns=[
     path('', views.records, name='records'),
     path('incomingDoc/', views.incomingDoc, name='incomingDoc'), 
     path('outgoingDoc/', views.outgoingDoc, name='outgoingDoc'),
+    path('addIncomingDoc/', views.addIncomingDoc, name='addIncomingDoc'),
 ]
