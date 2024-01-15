@@ -84,3 +84,61 @@ class IncomingDocForm(forms.ModelForm):
 
             
         }
+
+
+class outgoingDocForm(forms.ModelForm):
+    class Meta:
+        model = OutgoingDoc 
+        fields = '__all__'
+        widgets = { 
+            'continuos_number': forms.NumberInput(attrs={
+                'class': 'w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 ',
+                'placeholder': 'Enter number '
+                }),
+
+            'date': forms.TextInput(attrs={
+                'class': 'w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 ',
+                'placeholder': 'Enter number '
+                }),
+        
+            'book_no': forms.NumberInput(attrs={
+                'class': 'w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 ',
+                'placeholder': 'Enter number '
+                }),
+
+            'page_no': forms.NumberInput(attrs={
+                'class': 'w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 ',
+                'placeholder': 'Enter number '
+                }),
+
+            'year': forms.TextInput(attrs={
+                'class': 'w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 ',
+                'placeholder': 'Enter number '
+                }),
+
+            'archive': forms.TextInput(attrs={
+                'class': 'w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 ',
+                'placeholder': 'Enter number '
+                }),
+
+            'branch': forms.TextInput(attrs={
+                'class': 'w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 ',
+                'placeholder': 'Enter number '
+                }),
+
+            'dossier_no': forms.NumberInput(attrs={
+                'class': 'w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 ',
+                'placeholder': 'Enter number '
+                }),
+            
+            'image': forms.FileInput(attrs={
+                'class': 'w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 ',
+                'placeholder': 'Enter number '
+                }),
+
+            'short_explain': forms.Textarea(attrs={
+                'class': 'w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 ',
+                'placeholder': 'Enter number ',
+                'rows':2,
+                }),
+        }
