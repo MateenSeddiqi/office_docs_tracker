@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import IncomingDoc, OutgoingDoc
-from .forms import IncomingDocForm
+from .forms import IncomingDocForm, OutgoingDocForm
 from django.contrib import messages
 
 
@@ -35,6 +35,14 @@ def addIncomingDoc(request):
     return render(request, 'records/incomingDocForm.html', context)   
 
 
+# code of outgoing docs to display outgoing files
+def outgoingDoc(request):
+    outgoingDocs = IncomingDoc.objects.all()
+    return render (request, 'records/outgoingDocs.html', {
+        'outgoingDocs': outgoingDocs,
+        })
+
+
 def addOutgoingDoc(request):
     outgoing_doc_form = OutgoingDocForm()
     if request.method == 'POST':
@@ -47,14 +55,5 @@ def addOutgoingDoc(request):
         else:
             messages.error(request, 'Not  Added')
             
-    context ={'outgoing_doc_form': outgoing_doc_form} 
+    context ={'outgoingDocForm': outgoing_doc_form} 
     return render(request, 'records/outgoingDocForm.html', context)   
-
-
-
-# code of outgoing docs to display outgoing files
-def outgoingDoc(request):
-    outgoingDocs = IncomingDoc.objects.all()
-    return render (request, 'records/outgoingDocs.html', {
-        'outgoingDocs': outgoingDocs,
-        })
