@@ -81,12 +81,10 @@ class IncomingDocForm(forms.ModelForm):
                 'placeholder': 'Enter number ',
                 'rows':2,
                 }),
-
-            
         }
 
 
-class outgoingDocForm(forms.ModelForm):
+class OutgoingDocForm(forms.ModelForm):
     class Meta:
         model = OutgoingDoc 
         fields = '__all__'

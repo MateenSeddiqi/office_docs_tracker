@@ -20,7 +20,7 @@ def incomingDoc(request):
 
 
 def addIncomingDoc(request):
-    incoming_doc_form = IncomingDocForm()
+    incoming_doc_form = outgoingDocForm()
     if request.method == 'POST':
         incoming_doc_form = IncomingDocForm(request.POST, request.FILES)
 
@@ -34,6 +34,21 @@ def addIncomingDoc(request):
     context ={'incomingDocForm': incoming_doc_form} 
     return render(request, 'records/incomingDocForm.html', context)   
 
+
+def addOutgoingDoc(request):
+    outgoing_doc_form = OutgoingDocForm()
+    if request.method == 'POST':
+        outgoing_doc_form = OutgoingDocForm(request.POST, request.FILES)
+
+        if outgoing_doc_form.is_valid():
+            newdoc = outgoing_doc_form.save()
+            return redirect('records:outgoingDoc')  #pk=newdoc.id
+            messages.success(request, 'Added')
+        else:
+            messages.error(request, 'Not  Added')
+            
+    context ={'outgoing_doc_form': outgoing_doc_form} 
+    return render(request, 'records/outgoingDocForm.html', context)   
 
 
 
