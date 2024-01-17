@@ -1,40 +1,53 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
-<a href="{% url 'records:addOutgoingDoc' %}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold items-center">Add New </button></a>
 
-    <div class="min-h-screen bg-gray-100 flex items-start justify-center p-8">
+{% block content %}
+    <!-- <nav class="bg-blue-500 p-4 py-2 mx-10 my-2 rounded text-white">
+        <div class="flex justify-between items-center">
+            <h1 class="text-xl font-bold">Page Name</h1>
+            <a href="{% url 'records:addOutgoingDoc' %}">
+                <button class="bg-white text-blue-500 hover:text-white hover:bg-blue-700 font-bold px-4 py-2 rounded">Add New</button>
+            </a>
+        </div>
+    </nav> -->
+
+    <div class=" bg-gray-100 flex flex-col items-start justify-center py-2 px-8">
+        <div class="bg-white flex justify-between items-center shadow-md rounded-lg overflow-hidden w-full">
+            <h4 class="text-xl font-bold">Outgoing Docs</h4>
+
+            <a href="{% url 'records:addOutgoingDoc' %}">
+                <button class="bg-white text-blue-500 hover:text-white hover:bg-blue-700 font-bold px-4 py-2 rounded">Add New</button>
+            </a>
+        </div>
         <div class="bg-white shadow-md rounded-lg overflow-hidden w-full">
             <table class="min-w-full">
                 <thead>
                     <tr>
                         <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Co.No</th>
-                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Book No</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Date</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Book_no</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Page_no</th>
                         <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Year</th>
                         <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Archive</th>
                         <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Branch</th>
-                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Date</th>
-                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Sender</th>
-                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Receiver</th>
                         <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Surrender_name</th>
                         <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">More Details</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                     {% for outgoingDoc in outgoingDocs %}
-                    <tr class="hover:bg-blue-50">
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.continuos_number}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.date}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.book_no}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.page_no}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.year}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.archive}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.branch}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.dossier_no}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.short_explain}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border"> <a href="#" class="">More Info</a></td>
-                    </tr>
+                        <tr class="hover:bg-blue-50">
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.continuos_number}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.date}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.book_no}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.page_no}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.year}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.archive}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.branch}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.dossier_no}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border"> <a href="#" class="">More Info</a></td>
+                        </tr>
                     {% endfor %}
                     <!-- Add more rows as needed -->
                 </tbody>
