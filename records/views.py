@@ -34,6 +34,9 @@ def addIncomingDoc(request):
     context ={'incomingDocForm': incoming_doc_form} 
     return render(request, 'records/incomingDocForm.html', context)   
 
+def IncomingDocDetails(request):
+    return render(request, 'records/incomingDocDetails.html')
+
 
 # code of outgoing docs to display outgoing files
 def outgoingDoc(request):
@@ -57,3 +60,7 @@ def addOutgoingDoc(request):
             
     context ={'outgoingDocForm': outgoing_doc_form} 
     return render(request, 'records/outgoingDocForm.html', context)   
+
+
+def OutgoingDocDetails(request):
+    return render(request, 'records/outgoingDocDetails.html')
