@@ -4,4 +4,9 @@
 
 <h1>incoming details </h1>
 
+{% for incomingdoc in incomingDetails %}
+    {{incomingdoc.branch}}
+    {{incomingdoc.sender}}
+{% endfor %}
+
 {% endblock %}

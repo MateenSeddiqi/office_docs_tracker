@@ -23,7 +23,6 @@ def addIncomingDoc(request):
     incoming_doc_form = IncomingDocForm()
     if request.method == 'POST':
         incoming_doc_form = IncomingDocForm(request.POST, request.FILES)
-
         if incoming_doc_form.is_valid():
             newdoc = incoming_doc_form.save()
             return redirect('records:incomingDoc')  #pk=newdoc.id
@@ -34,8 +33,12 @@ def addIncomingDoc(request):
     context ={'incomingDocForm': incoming_doc_form} 
     return render(request, 'records/incomingDocForm.html', context)   
 
-def IncomingDocDetails(request):
-    return render(request, 'records/incomingDocDetails.html')
+def IncomingDocDetails(request, pk):
+    incomingDetails= IncomingDoc.objects.filter(id=pk)
+    context = {
+        'incomingDetails':incomingDetails,
+    }
+    return render(request, 'records/incomingDocDetails.html', context)
 
 
 # code of outgoing docs to display outgoing files
