@@ -2,9 +2,14 @@
 {% load static %}
 
 {% block content %}
-<a href="{% url 'records:addIncomingDoc' %}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold items-center">Add New </button></a>
+    <div class=" bg-gray-100 flex flex-col items-start justify-center py-2 px-8">
+        <div class="p-4 py-2  my-2 rounded text-white bg-blue-500 flex justify-between items-center shadow-md overflow-hidden w-full">
+            <h4 class="text-xl font-bold">Incoming Docs</h4>
 
-    <div class="min-h-screen bg-gray-100 flex items-start justify-center p-8">
+            <a href="{% url 'records:addIncomingDoc' %}">
+                <button class="bg-white text-blue-500 hover:text-white hover:bg-blue-700 font-bold px-4 py-2 rounded">Add New</button>
+            </a>
+        </div>
         <div class="bg-white shadow-md rounded-lg overflow-hidden w-full">
             <table class="min-w-full">
                 <thead>
@@ -23,23 +28,22 @@
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                     {% for incomingDoc in incomingDocs %}
-                    <tr class="hover:bg-blue-50">
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.continuos_number}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.book_no}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.year}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.archive}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.branch}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.date}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.sender}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.receiver}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.Surrender_name}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap borde "><a href="#" class=""> More Info </a></td>    
-                    </tr>
+                        <tr class="hover:bg-blue-50">
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.continuos_number}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.book_no}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.year}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.archive}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.branch}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.date}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.sender}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.receiver}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.Surrender_name}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap borde "><a href="#" class=""> More Info </a></td> 
+                        </tr>
                     {% endfor %}
                     <!-- Add more rows as needed -->
                 </tbody>
             </table>
         </div>
     </div>
-
 {% endblock %}

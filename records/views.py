@@ -20,7 +20,7 @@ def incomingDoc(request):
 
 
 def addIncomingDoc(request):
-    incoming_doc_form = outgoingDocForm()
+    incoming_doc_form = IncomingDocForm()
     if request.method == 'POST':
         incoming_doc_form = IncomingDocForm(request.POST, request.FILES)
 
