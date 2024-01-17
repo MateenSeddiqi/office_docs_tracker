@@ -9,21 +9,21 @@
             <table class="min-w-full">
                 <thead>
                     <tr>
-                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Co.No</th>
-                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Book No</th>
-                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Year</th>
-                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Archive</th>
-                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Branch</th>
-                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Date</th>
-                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Sender</th>
-                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Receiver</th>
-                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Surrender_name</th>
-                        <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">More Details</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white  uppercase tracking-wider">Co.No</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Book No</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Year</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Archive</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Branch</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Date</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Sender</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Receiver</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">Surrender_name</th>
+                        <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">More Details</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                     {% for incomingDoc in incomingDocs %}
-                    <tr>
+                    <tr class="hover:bg-blue-50">
                         <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.continuos_number}}</td>
                         <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.book_no}}</td>
                         <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.year}}</td>
@@ -33,7 +33,7 @@
                         <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.sender}}</td>
                         <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.receiver}}</td>
                         <td class="px-6 py-4 whitespace-no-wrap border">{{incomingDoc.Surrender_name}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap border">More Info</td>
+                        <td class="px-6 py-4 whitespace-no-wrap borde "><a href="#" class=""> More Info </a></td>    
                     </tr>
                     {% endfor %}
                     <!-- Add more rows as needed -->
