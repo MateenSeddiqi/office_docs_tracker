@@ -2,21 +2,41 @@
 {% load static %}
 {% block content %}
 
-<h1>incoming details </h1>
+{% for incomingDoc in incomingDetails %}
+    <div class="container mx-auto p-4">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden w-full p-4">
+            <!-- Record Details Section -->
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold mb-4">Incoming Doc Details</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="mb-4">
+                        <p class="text-gray-600 font-semibold">Continuous Number</p>
+                        <p>{{ incomingDoc.continuos_number }}</p>
 
-{% for incomingdoc in incomingDetails %}
-<div class="container mx-auto p-4">
-    <div class="bg-white shadow-md rounded-lg overflow-hidden w-full p-4">
-        <!-- Display record details -->
-        <h2 class="text-2xl font-bold mb-4">Incoming Doc Details</h2>
-        <div class="grid grid-cols-2 gap-4">
-            <div>
-                <p><span class="font-bold">Continuous Number:</span> {{ incomingDoc.continuos_number }}</p>
-                <!-- Add other fields here -->
+                        <p class="text-gray-600 font-semibold">Continuous Number</p>
+                        <p>{{ incomingDoc.continuos_number }}</p>
+
+                        <p class="text-gray-600 font-semibold">Continuous Number</p>
+                        <p>{{ incomingDoc.continuos_number }}</p>
+
+                        
+                    </div>
+                    <!-- Add other fields here -->
+                </div>
+            </div>
+            <!-- Update and Delete Buttons Section -->
+            <div class="flex justify-end">
+                <a href="">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">Update</button>
+                </a>
+                <a href="">
+                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                </a>
             </div>
         </div>
     </div>
-</div>
 {% endfor %}
-
 {% endblock %}
+
+<!-- {% url 'update_record' incomingDoc.id %}
+{% url 'delete_record' incomingDoc.id %} -->
