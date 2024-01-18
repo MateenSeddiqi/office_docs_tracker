@@ -5,8 +5,18 @@
 <h1>incoming details </h1>
 
 {% for incomingdoc in incomingDetails %}
-    {{incomingdoc.branch}}
-    {{incomingdoc.sender}}
+<div class="container mx-auto p-4">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden w-full p-4">
+        <!-- Display record details -->
+        <h2 class="text-2xl font-bold mb-4">Incoming Doc Details</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <div>
+                <p><span class="font-bold">Continuous Number:</span> {{ incomingDoc.continuos_number }}</p>
+                <!-- Add other fields here -->
+            </div>
+        </div>
+    </div>
+</div>
 {% endfor %}
 
 {% endblock %}
