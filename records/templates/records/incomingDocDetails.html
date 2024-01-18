@@ -3,82 +3,91 @@
 {% block content %}
 
 {% for incomingDoc in incomingDetails %}
-    <div class="container mx-auto p-4">
-        <div class="bg-white shadow-md rounded-lg overflow-hidden w-full p-4">
-            <!-- Record Details Section -->
-                <h2 class="text-2xl font-bold mb-4">Incoming Doc Details</h2>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-2">
+        <div class="bg-gray-100 shadow-md rounded-lg overflow-hidden w-full p-2">
+                <h2 class="bg-blue-500 text-white text-2xl rounded mb-4">Incoming Doc Details</h2>
 
-                <div class="grid grid-cols-4 grid-rows-5 gap-4">
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.continuos_number  }}</p>
+                <div class="grid grid-cols-4 border-spacing-1">
+                    <div class="">
+                        <div class="px-2 py-2">
+                            <p class="text-black font-semibold">Continuous Number</p>
+                            <p>{{ incomingDoc.continuos_number  }}</p>
+                        </div>
+
+                        <div class="px-2 py-2">
+                            <p class="text-black font-semibold">Book No</p>
+                            <p>{{ incomingDoc.book_no }}</p>
+                        </div>
+
+                        <div class="px-2 py-2">
+                            <p class="text-black font-semibold">Page No</p>
+                            <p>{{ incomingDoc.page_no }}</p>    
+                        </div>
+
+                        <div class="px-2 py-2">
+                            <p class="text-black font-semibold">Year</p>
+                            <p>{{ incomingDoc.year }}</p>
+                        </div>
                     </div>
 
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.book_no }}</p>
-                    </div>
+                    <div>
+                        <div class="px-2 py-2">
+                            <p class="text-black font-semibold">Archive</p>
+                            <p>{{ incomingDoc.archive }}</p>
+                        </div>
+                        <div class="px-2 py-2">
+                            <p class="text-black font-semibold">Branch</p>
+                            <p>{{ incomingDoc.branch }}</p>
+                        </div>
+                            
+                        <div class="px-2 py-2">
+                            <p class="text-black font-semibold">Date</p>
+                            <p>{{ incomingDoc.date }}</p>
+                        </div>
+                        <div class="px-2 py-2">
+                            <p class="text-black font-semibold">Sender</p>
+                            <p>{{ incomingDoc.sender }}</p>
+                        </div>
+                    </div>  
                     
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.page_no }}</p>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.year }}</p>
-                    </div>
-
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.archive }}</p>
-                    </div>
-
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.branch }}</p>
-                    </div>
-
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.date }}</p>
-                    </div>
-
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.sender }}</p>
-
-                    </div>
-
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.receiver}}</p>
-                    </div>
-
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.number }}</p>
-                    </div>
-
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.Surrender_date }}</p>
-
-                    </div>
-
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.register_number }}</p>
-                    </div>
-
-                    <div class="mb-4">
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <img src="{{ incomingdocs.images.url }}" class="w-32 h-32" alt="Image Description">
-                    </div>
-
                     <div >
-                        <p class="text-gray-600 font-semibold">Continuous Number</p>
-                        <p>{{ incomingDoc.remarks }}</p>
+                        <div class="px-2 py-2">
+                            <p class="text-black font-semibold">Receiver</p>
+                            <p>{{ incomingDoc.receiver}}</p>
+                        </div>
+
+                        <div class="px-2 py-2">
+                            <p class="text-black font-semibold">Number of </p>
+                            <p>{{ incomingDoc.number }}</p>
+                        </div>
+
+                        <div class="px-2 py-2">
+                            <p class="text-black font-semibold">Surrender Name</p>
+                            <p>{{ incomingDoc.Surrender_name }}</p>
+                        </div>
+
+                        <div class="px-2 py-2">
+                            <p class="text-black font-semibold"> Surrender Date</p>
+                            <p>{{ incomingDoc.Surrender_date }}</p>
+                        </div>
+                    </div>
+                    
+                    <div >
+                        <div class="px-2 py-2">
+                            <p class="text-gray-600 font-semibold">Register number</p>
+                            <p>{{ incomingDoc.register_number }}</p>
+                        </div>
+                        
+                        <div class="px-2 py-2">
+                            <p class="text-gray-600 font-semibold">Remarks</p>
+                            <p>{{ incomingDoc.remarks }}</p>
+                        </div>
+
+                        <div class="px-2 py-2">
+                            <p class="text-gray-600 font-semibold">Image</p>
+                            <img src="{{ incomingdocs.images.url }}" class="w-32 h-20" alt="Image Description">
+                        </div>
                     </div>
             </div>
             <!-- Update and Delete Buttons Section -->
@@ -92,6 +101,8 @@
             </div>
         </div>
     </div>
+</body>
+
 {% endfor %}
 {% endblock %}
 
