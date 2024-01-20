@@ -37,7 +37,11 @@
                             <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.archive}}</td>
                             <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.branch}}</td>
                             <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.dossier_no}}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border"> <a href="#" class="">More Info</a></td>
+                            <td class="px-6 py-4 whitespace-no-wrap border"> 
+                                <a href="{% url 'records:OutgoingDocDetails' outgoingDoc.id %}" class="">
+                                    More Info
+                                </a>
+                            </td>
                         </tr>
                     {% endfor %}
                     <!-- Add more rows as needed -->

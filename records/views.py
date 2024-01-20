@@ -65,5 +65,9 @@ def addOutgoingDoc(request):
     return render(request, 'records/outgoingDocForm.html', context)   
 
 
-def OutgoingDocDetails(request):
-    return render(request, 'records/outgoingDocDetails.html')
+def OutgoingDocDetails(request, pk):
+    outgoingDetails= OutgoingDoc.objects.filter(id=pk)
+    context = {
+        'outgoingDetails':outgoingDetails\
+    }
+    return render(request, 'records/outgoingDocDetails.html', context)
