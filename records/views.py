@@ -53,6 +53,12 @@ def updateIncomingDoc(request, pk):
         return redirect ('records:incomingDoc')
     return render(request, 'records/update_incoming.html', {'updateForm':updateForm})
 
+def deleteIncomingDoc(request, pk):
+    deleteIncoming = IncomingDoc.objects.get(id=pk)
+    deleteIncoming.delete()
+    messages.success(request, 'Record Delete')
+    return redirect ('records:incomingDoc')
+
 
 
 #All Outgoing Docs codes: 
