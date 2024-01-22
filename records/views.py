@@ -27,9 +27,9 @@ def addIncomingDoc(request):
     if request.method == 'POST':
         incoming_doc_form = IncomingDocForm(request.POST, request.FILES)
         if incoming_doc_form.is_valid():
-            newdoc = incoming_doc_form.save()
+            incoming_doc_form.save()
+            messages.success(request, 'Record Added')
             return redirect('records:incomingDoc')
-            messages.success(request, ' Added')
         else:
             messages.error(request, 'Not  Added')
             
