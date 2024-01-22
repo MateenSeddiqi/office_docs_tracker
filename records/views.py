@@ -29,7 +29,7 @@ def addIncomingDoc(request):
         if incoming_doc_form.is_valid():
             newdoc = incoming_doc_form.save()
             return redirect('records:incomingDoc')
-            messages.success(request, 'Added')
+            messages.success(request, ' Added')
         else:
             messages.error(request, 'Not  Added')
             
@@ -81,11 +81,10 @@ def addOutgoingDoc(request):
 
         if outgoing_doc_form.is_valid():
             newdoc = outgoing_doc_form.save()
+            messages.success(request, "Record Added")
             return redirect('records:outgoingDoc')
-            messages.success(request, 'Added')
         else:
             messages.error(request, 'Not  Added')
-            
     context ={'outgoingDocForm': outgoing_doc_form} 
     return render(request, 'records/outgoingDocForm.html', context)   
 
