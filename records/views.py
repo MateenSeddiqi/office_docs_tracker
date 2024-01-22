@@ -93,8 +93,9 @@ def OutgoingDocDetails(request, pk):
 
 def updateOutgoingDoc(request, pk):
     updateOutgoing = OutgoingDoc.objects.get(id=pk)
-    updateForm = OutgoingDocForm (request.POST or None, instance = updateOutgoing)
-    if  updateForm.is_valid():
+    updateForm = OutgoingDocForm (request.POST or None, instance=updateOutgoing)
+    if updateForm.is_valid():
         updateForm.save()
+        messages.success(request, 'Record Updated')
         return redirect ('records:outgoingDoc')
     return render(request, 'records/update_outgoing.html', {'updateForm':updateForm})
