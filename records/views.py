@@ -87,6 +87,14 @@ def addOutgoingDoc(request):
 def OutgoingDocDetails(request, pk):
     outgoingDetails= OutgoingDoc.objects.filter(id=pk)
     context = {
-        'outgoingDetails':outgoingDetails\
+        'outgoingDetails':outgoingDetails
     }
     return render(request, 'records/outgoingDocDetails.html', context)
+
+def updateOutgoingDoc(request, pk):
+    updateOutgoing = OutgoingDoc.objects.get(id=pk)
+    updateForm = OutgoingDocForm (request.POST or None, instance = updateOutgoing)
+    if  updateForm.is_valid():
+        updateForm.save()
+        return redirect ('records:outgoingDoc')
+    return render(request, 'records/update_outgoing.html', {'updateForm':updateForm})

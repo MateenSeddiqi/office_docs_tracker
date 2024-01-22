@@ -6,7 +6,7 @@
 <body class="bg-gray-100">
     <div class="container mx-auto p-2">
         <div class="bg-gray-100 border border-gray-500 shadow-md rounded-lg overflow-hidden p-4">
-            <h2 class="bg-blue-500 text-white text-2xl font-bold rounded mb-4 p-2">Incoming Doc Details</h2>
+            <h2 class="bg-blue-500 text-white text-2xl font-bold rounded mb-4 p-2">Outgoing Doc Details</h2>
     
             <div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div class="border p-4 bg-blue-100 shadow-sm ">
@@ -43,32 +43,6 @@
                     <p class="text-black font-semibold">Date</p>
                     <p>{{ outgoingDetail.branch }}</p>
                 </div>
-    
-                <div class="border p-4 bg-blue-100 shadow-sm">
-                    <p class="text-black font-semibold">Sender</p>
-                    <p></p>
-                </div>
-    
-                <div class="border p-4 bg-blue-100 shadow-sm">
-                    <p class="text-black font-semibold">Receiver</p>
-                    <p></p>
-                </div>
-    
-                <div class="border p-4 col-span-2 bg-blue-100 shadow-sm">
-                    <p class="text-black font-semibold">Number of</p>
-                    <p></p>
-                </div>
-    
-                <div class="border p-4 col-span-2 bg-blue-100 shadow-sm">
-                    <p class="text-black font-semibold">Surrender Name</p>
-                    <p></p>
-                </div>
-    
-                <div class="border p-4 col-span-2 bg-blue-100 shadow-sm">
-                    <p class="text-black font-semibold">Surrender Date</p>
-                    <p></p>
-                </div>
-
                 <div class="border p-4 col-span-2">
                     <p class="text-black font-semibold">Image</p>
                     <div class="h-64 w-full">
@@ -78,12 +52,12 @@
     
                 <div class="border p-4 col-span-2">
                     <p class="text-black font-semibold">Remarks</p>
-                    <p>{{ incomingDoc.short_explain }}</p>
+                    <p>{{ outgoingDetail.short_explain }}</p>
                 </div>
             </div>
             <!-- Update and Delete Buttons Section -->
             <div class="flex justify-end mt-4">
-                <a href="#">
+                <a href="{% url 'records:updateOutgoingDoc' outgoingDetail.id %}">
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">Update</button>
                 </a>
                 <a href="#">
@@ -95,14 +69,3 @@
 </body>
 {% endfor %}
 {% endblock %}
-<!-- 
-continuos_number = models.IntegerField(unique=True)
-date = models.DateField(null=True, blank=True)
-book_no = models.IntegerField()
-page_no = models.IntegerField()
-year    = models.CharField(max_length=20, null=True, blank=True)
-archive = models.CharField(max_length=200, null=True, blank=True)
-branch  = models.CharField(max_length=200, null=True, blank=True)
-short_explain = models.TextField()
-dossier_no = models.IntegerField()
-image = models.ImageField(upload_to="records/outgoingdocs/images", null=True, blank=True) -->
