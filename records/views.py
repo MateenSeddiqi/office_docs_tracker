@@ -17,7 +17,6 @@ def records(request):
 
 def incomingDoc(request):  
     incomingDocs = IncomingDoc.objects.all()
-    print(incomingDocs)
     return render (request, 'records/incomingDocs.html', {
         'incomingDocs': incomingDocs,
         })
@@ -29,7 +28,7 @@ def addIncomingDoc(request):
         incoming_doc_form = IncomingDocForm(request.POST, request.FILES)
         if incoming_doc_form.is_valid():
             newdoc = incoming_doc_form.save()
-            return redirect('records:incomingDoc')  #pk=newdoc.id
+            return redirect('records:incomingDoc')
             messages.success(request, 'Added')
         else:
             messages.error(request, 'Not  Added')
