@@ -66,7 +66,7 @@
                 <a href="{% url 'records:updateOutgoingDoc' outgoingDetail.id %}">
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">Update</button>
                 </a>
-                <a href="#">
+                <a href="{% url 'records:DeleteOutgoingDoc' outgoingDetail.id %}">
                     <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
                 </a>
             </div>

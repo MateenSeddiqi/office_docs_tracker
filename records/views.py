@@ -105,3 +105,9 @@ def updateOutgoingDoc(request, pk):
         messages.success(request, 'Record Updated')
         return redirect ('records:outgoingDoc')
     return render(request, 'records/update_outgoing.html', {'updateForm':updateForm})
+
+def DeleteOutgoingDoc(request, pk):
+    deleteOutgoing = OutgoingDoc.objects.get(id=pk)
+    deleteOutgoing.delete()
+    messages.success(request, "Record Deleted")
+    return redirect ('records:outgoingDoc')

@@ -14,4 +14,5 @@ urlpatterns=[
     path('updateIncomingDoc/<int:pk>', views.updateIncomingDoc, name='updateIncomingDoc'),
     path('updateOutgoingDoc/<int:pk>', views.updateOutgoingDoc, name='updateOutgoingDoc'),
     path('deleteIncomingDoc/<int:pk>', views.deleteIncomingDoc, name='deleteIncomingDoc'),
+    path('DeleteOutgoingDoc/<int:pk>', views.DeleteOutgoingDoc, name='DeleteOutgoingDoc'),
 ]
