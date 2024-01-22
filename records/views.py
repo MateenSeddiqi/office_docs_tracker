@@ -62,7 +62,7 @@ def updateIncomingDoc(request, pk):
 #     Delete Outgoing Docs 
 
 def outgoingDoc(request):
-    outgoingDocs = IncomingDoc.objects.all()
+    outgoingDocs = OutgoingDoc.objects.all()
     return render (request, 'records/outgoingDocs.html', {
         'outgoingDocs': outgoingDocs,
         })
@@ -75,7 +75,7 @@ def addOutgoingDoc(request):
 
         if outgoing_doc_form.is_valid():
             newdoc = outgoing_doc_form.save()
-            return redirect('records:outgoingDoc')  #pk=newdoc.id
+            return redirect('records:outgoingDoc')
             messages.success(request, 'Added')
         else:
             messages.error(request, 'Not  Added')
