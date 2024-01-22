@@ -4,13 +4,17 @@ from .forms import IncomingDocForm, OutgoingDocForm
 from django.contrib import messages
 
 
-# Create your views here.
 
 def records(request):
     return render (request, 'records/records.html')
     
 
-# code of incoming docs to display incoming files
+# All Incoming Docs codes: 
+#     Display Incoming Docs 
+#     Add Incoming Docs
+#     Update Incoming Docs 
+#     Delete Incoming Docs 
+
 def incomingDoc(request):  
     incomingDocs = IncomingDoc.objects.all()
     print(incomingDocs)
@@ -41,7 +45,14 @@ def IncomingDocDetails(request, pk):
     return render(request, 'records/incomingDocDetails.html', context)
 
 
-# code of outgoing docs to display outgoing files
+
+
+#All Outgoing Docs codes: 
+#     Display Outgoing Docs 
+#     Add Outgoing Docs
+#     Update Outgoing Docs 
+#     Delete Outgoing Docs 
+
 def outgoingDoc(request):
     outgoingDocs = IncomingDoc.objects.all()
     return render (request, 'records/outgoingDocs.html', {
