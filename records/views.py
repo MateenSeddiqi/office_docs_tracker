@@ -37,6 +37,7 @@ def addIncomingDoc(request):
     context ={'incomingDocForm': incoming_doc_form} 
     return render(request, 'records/incomingDocForm.html', context)   
 
+
 def IncomingDocDetails(request, pk):
     incomingDetails= IncomingDoc.objects.filter(id=pk)
     context = {
@@ -44,6 +45,14 @@ def IncomingDocDetails(request, pk):
     }
     return render(request, 'records/incomingDocDetails.html', context)
 
+def updateIncomingDoc(request, pk):
+    updateIncoming = IncomingDoc.objects.get(id=pk)
+    updateForm = IncomingDocForm(request.POST or None, instance=updateIncoming)
+    if updateForm.is_valid():
+        updateForm.save()
+        messages.success(request, 'Record Updated')
+        return redirect ('records:incomingDoc')
+    return render(request, 'records/update_incoming.html', {'updateForm':updateForm})
 
 
 
