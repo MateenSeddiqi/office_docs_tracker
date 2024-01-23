@@ -762,6 +762,11 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -2057,6 +2062,14 @@ video {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .px-4 {
