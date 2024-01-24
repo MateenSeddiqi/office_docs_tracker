@@ -8,15 +8,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css_out/out.css' %}">
 </head>
-<body>
-    {% include 'include/navbar.html' %}
-    
+<body class=""">
+    <div class="h-10">
+        {% include 'include/navbar.html' %}
+    </div>
+
     <main>
         {% block content %}
 
         {% endblock %}
     </main>
     
-    {% include 'include/footer.html' %}
+    <div>
+        {% include 'include/footer.html' %}
+    </div>
+    
 </body>
 </html>
