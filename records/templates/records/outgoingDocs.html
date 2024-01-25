@@ -3,7 +3,7 @@
 
 
 {% block content %}
-    <div class=" bg-gray-100 flex flex-col items-start justify-center py-2 px-8">
+    <div class=" bg-gray-100 flex flex-col h-screen items-start  py-2 px-4">
         {% if messages %}
             {% for message in messages %}
                 {{ message }}
@@ -31,18 +31,18 @@
                         <th class="px-6 py-3 bg-blue-500 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">More Details</th>
                     </tr>
                 </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
+                <tbody class="bg-white divide-y divide-gray-200 r">
                     {% for outgoingDoc in outgoingDocs %}
                         <tr class="hover:bg-blue-50">
-                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.continuos_number}}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.date}}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.book_no}}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.page_no}}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.year}}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.archive}}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.branch}}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border">{{outgoingDoc.dossier_no}}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border"> 
+                            <td class="px-6 py-4 whitespace-no-wrap border text-center">{{outgoingDoc.continuos_number}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border text-center">{{outgoingDoc.date}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border text-center">{{outgoingDoc.book_no}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border text-center">{{outgoingDoc.page_no}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border text-center">{{outgoingDoc.year}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border text-center">{{outgoingDoc.archive}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border text-center">{{outgoingDoc.branch}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border text-center">{{outgoingDoc.dossier_no}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border text-center"> 
                                 <a href="{% url 'records:OutgoingDocDetails' outgoingDoc.id %}" class="">
                                     More Info
                                 </a>
