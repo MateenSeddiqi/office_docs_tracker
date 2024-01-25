@@ -3,7 +3,7 @@
 
 
 {% block content %}
-    <div class=" bg-gray-100 flex flex-col h-screen items-start  py-2 px-4">
+    <div class=" bg-gray-100 flex flex-col h-screen items-start  py-2 px-12">
         {% if messages %}
             {% for message in messages %}
                 {{ message }}
@@ -44,7 +44,7 @@
                             <td class="px-6 py-4 whitespace-no-wrap border text-center">{{outgoingDoc.dossier_no}}</td>
                             <td class="px-6 py-4 whitespace-no-wrap border text-center"> 
                                 <a href="{% url 'records:OutgoingDocDetails' outgoingDoc.id %}" class="">
-                                    More Info
+                                    Display data
                                 </a>
                             </td>
                         </tr>
