@@ -10,13 +10,14 @@
             {% endfor %}
         {% endif %}
         <div class="p-4 py-2  my-2 rounded text-white bg-blue-500 flex justify-between items-center shadow-md overflow-hidden w-full">
-            <h4 class="text-xl font-bold">Outgoing Docs</h4>
-            <div class="flex justify-end px-3">
-                <button class="bg-white text-blue-500 hover:text-white hover:bg-blue-700 font-bold mx-4 px-4 py-2 rounded">Search</button>
+            <div class="flex justify-end">
                 <a href="{% url 'records:addOutgoingDoc' %}">
                     <button class="bg-white text-blue-500 hover:text-white hover:bg-blue-700 font-bold px-4 py-2 rounded">Add New file</button>
                 </a>
+                <button class="bg-white text-blue-500 hover:text-white hover:bg-blue-700 font-bold mx-4 px-4 py-2 rounded">Search</button>
             </div>
+            <h4 class="text-xl font-bold">Outgoing Docs</h4>
+            
         </div>
         <div class="bg-white shadow-md rounded-lg overflow-hidden w-full">
             <table class="min-w-full">
@@ -46,7 +47,7 @@
                             <td class="px-6 py-4 whitespace-no-wrap border text-center">{{outgoingDoc.dossier_no}}</td>
                             <td class="px-6 py-4 whitespace-no-wrap border text-center"> 
                                 <a href="{% url 'records:OutgoingDocDetails' outgoingDoc.id %}" class="">
-                                    Display data
+                                    Display all Records
                                 </a>
                             </td>
                         </tr>
