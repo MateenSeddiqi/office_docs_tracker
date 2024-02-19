@@ -23,9 +23,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('foo/', TemplateView.as_view(template_name='base.html'))
+    path('', include('main.urls')),
     path('records/', include('records.urls')),
-
+    # path('foo/', TemplateView.as_view(template_name='base.html'))
+    
 ] +  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
