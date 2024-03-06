@@ -905,6 +905,18 @@ video {
   height: 100vh;
 }
 
+.h-\[64vh\] {
+  height: 64vh;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
+}
+
+.h-1\/2 {
+  height: 50%;
+}
+
 .w-1 {
   width: 0.25rem;
 }
