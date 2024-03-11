@@ -885,6 +885,10 @@ video {
   display: none;
 }
 
+.h-1\/2 {
+  height: 50%;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -893,20 +897,12 @@ video {
   height: 16rem;
 }
 
-.h-80 {
-  height: 20rem;
-}
-
 .h-full {
   height: 100%;
 }
 
 .h-screen {
   height: 100vh;
-}
-
-.h-1\/2 {
-  height: 50%;
 }
 
 .w-1 {
