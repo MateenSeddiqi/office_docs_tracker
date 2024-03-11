@@ -8,12 +8,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css_out/out.css' %}">
 </head>
-<body class="">
-    <div class="h-10">
+<body class="h-screen">
+    <div >
         {% include 'include/navbar.html' %}
     </div>
 
-    <main class="h-screen">
+    <main class="h-3/4" >
         {% block content %}
 
         {% endblock %}
